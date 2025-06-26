@@ -140,10 +140,39 @@ header {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--primary-color);
+  display: flex;
+  flex-direction: column; /* empile verticalement */
+  align-items: center;    /* centre horizontalement */
+  cursor: default;
+  user-select: none;
 }
+
+.logo .main-text {
+  font-size: 25px;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  margin: 0; /* pour éviter marge non voulue */
+}
+
+
+.logo .sub-text {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--primary-color);
+  margin-top: -15px;
+}
+
+
+.logo:hover {
+  filter: brightness(1.1);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 nav ul {
   display: flex;
@@ -746,7 +775,17 @@ body.dark-mode .carousel-nav {
 
 @media (max-width: 768px) {
   .carousel-slide {
-    padding: 20px;
+    padding: 10px; /* Moins de padding pour plus de place */
+    display: flex;
+    justify-content: center;
+  }
+
+  .carousel-slide img {
+    max-height: 200px;   /* Hauteur max réduite */
+    max-width: 90vw;     /* Largeur limitée à 90% de l'écran */
+    border-radius: 15px;
+    width: auto;
+    height: auto;
   }
 
   .carousel-caption {
@@ -755,24 +794,14 @@ body.dark-mode .carousel-nav {
     right: 10px;
     bottom: 10px;
     padding: 10px;
-  }
-
-  .carousel-slide img {
-    max-height: 250px;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .carousel-caption {
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    padding: 15px 20px;
+    max-width: 90vw; /* Limiter largeur caption */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 
   .carousel-caption h3 {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 5px;
   }
 
   .carousel-caption p {
@@ -783,11 +812,7 @@ body.dark-mode .carousel-nav {
     font-size: 26px;
     padding: 10px 14px;
   }
-}
 
-
-/* Responsive */
-@media (max-width: 768px) {
   .portfolio h2 {
     font-size: 32px;
   }
@@ -809,15 +834,12 @@ body.dark-mode .carousel-nav {
     padding: 12px 28px;
   }
 
-  .carousel-item img {
-    max-width: 90%;
-  }
-
   .carousel-btn {
     font-size: 26px;
     padding: 10px 14px;
   }
 }
+
 
 /* Dark Mode Compatibility */
 body.dark-mode .portfolio {
