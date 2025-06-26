@@ -189,6 +189,47 @@ nav ul li button {
   border: none;
 }
 
+.social-floating {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 15px 0 0 15px;
+  padding: 10px 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-floating a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.social-floating a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.social-floating img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+  /* Supprimer le filter */
+}
+
+
 /* Burger - style de base */
 .burger {
   display: none;
