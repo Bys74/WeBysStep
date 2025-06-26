@@ -81,5 +81,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-burger.classList.toggle('toggle');
-nav.classList.toggle('active');
