@@ -124,70 +124,111 @@ a, button {
 }
 
 /* =========================
-   🔝 Header & Navigation
+   🌟 Enhanced Header Style
 ========================= */
+
 header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--card-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: background 0.5s;
+  padding: 18px 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+body.dark-mode header {
+  background: var(--card-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Logo */
 .logo {
   display: flex;
-  flex-direction: column; /* empile verticalement */
-  align-items: center;    /* centre horizontalement */
-  cursor: default;
-  user-select: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
+.logo a {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none; /* facultatif pour éviter le soulignement */
+  align-items: flex-start; /* aligne le texte à gauche */
+}
+
+
 .logo .main-text {
-  font-size: 25px;
-  font-weight: 900;
+  font-size: 28px;
+  font-weight: 800;
   background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 1.2px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-  margin: 0; /* pour éviter marge non voulue */
+  letter-spacing: 1px;
 }
-
 
 .logo .sub-text {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   color: var(--primary-color);
-  margin-top: -15px;
+  opacity: 0.8;
 }
 
-
-.logo:hover {
-  filter: brightness(1.1);
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-
+/* Navigation Links */
 nav ul {
   display: flex;
-  list-style: none;
-  gap: 30px;
+  gap: 28px;
   align-items: center;
 }
 
-nav ul li a,
-nav ul li button {
+nav ul li a {
+  position: relative;
+  font-size: 17px;
   font-weight: 500;
-  font-size: 18px;
-  background: none;
-  border: none;
+  color: inherit;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
 }
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Animation shrink on scroll */
+header.shrink {
+  padding: 10px 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  background: var(--card-light);
+}
+
+body.dark-mode header.shrink {
+  background: var(--card-dark);
+}
+
+/* JS class toggle idea (à utiliser si tu veux un effet de scroll shrink) */
+
 
 .social-floating {
   position: fixed;
@@ -1087,4 +1128,64 @@ body.dark-mode textarea::placeholder {
   nav ul {
     flex-direction: column;
   }
+}
+
+.site-footer {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 4px solid var(--primary-color);
+  font-size: 16px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-container p {
+  margin-bottom: 15px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* Dark Mode support */
+body.dark-mode .site-footer {
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  color: var(--text-dark);
+}
+
+body.dark-mode .footer-social a {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .footer-social a:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
