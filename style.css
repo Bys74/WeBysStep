@@ -1,0 +1,456 @@
+/* =========================
+   🌈 Variables & Reset
+========================= */
+:root {
+  --primary-color: #0077b6;
+  --secondary-color: #023e8a;
+  --bg-light: #f0f4f8;
+  --bg-dark: #121212;
+  --text-light: #333;
+  --text-dark: #f5f5f5;
+  --card-light: #ffffff;
+  --card-dark: #1f1f1f;
+  --input-light: #ffffff;
+  --input-dark: #2a2a2a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   🧱 Base Styles
+========================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.5s, color 0.5s;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: var(--primary-color);
+}
+
+a, button {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* =========================
+   ⏳ Loader
+========================= */
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: background 0.5s;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top: 6px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* =========================
+   🔝 Header & Navigation
+========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.5s;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+nav ul li a,
+nav ul li button {
+  font-weight: 500;
+  font-size: 18px;
+  background: none;
+  border: none;
+}
+
+/* Responsive Burger Menu */
+.burger {
+  display: none;
+  font-size: 36px;
+  z-index: 1101;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1100;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding-top: 100px;
+    gap: 20px;
+  }
+}
+
+/* =========================
+   🦸‍♂️ Hero Section
+========================= */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #0077b6, #90e0ef);
+  background-attachment: fixed;
+}
+
+.hero-content {
+  max-width: 900px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+  position: relative;
+}
+
+.hero-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 40px;
+}
+
+.hero .btn,
+.btn {
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 50px;
+  background: white;
+  color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #90e0ef;
+  color: #000;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.btn-container .btn {
+  padding: 18px 50px;
+  font-size: 20px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(0, 119, 182, 0.5);
+  transition: background 0.3s ease;
+}
+
+.btn-container .btn:hover {
+  background: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   📦 Sections
+========================= */
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background: var(--card-light);
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  flex: 1 1 250px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.about-content img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Form */
+form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input, textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background: var(--input-light);
+  transition: background 0.5s;
+}
+
+button[type="submit"] {
+  padding: 15px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: var(--secondary-color);
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.carousel-item {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  background: var(--card-light);
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: all 0.5s ease;
+  transform: scale(0.95);
+}
+
+.carousel-item:hover {
+  transform: scale(1);
+}
+
+.carousel-item img {
+  width: 60%;
+  max-width: 400px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item h3 {
+  font-size: 28px;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.carousel-item p {
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
+/* =========================
+   🌑 Dark Mode
+========================= */
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode header,
+body.dark-mode nav {
+  background: #1e1e1e;
+}
+
+body.dark-mode .card,
+body.dark-mode .carousel-item,
+body.dark-mode .service-box {
+  background: var(--card-dark);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background: var(--input-dark);
+  color: #fff;
+}
+
+/* =========================
+   🔁 Utilities / Effects
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   📱 Responsive
+========================= */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
+  .hero p, .card p, .carousel-item p { font-size: 16px; }
+  .carousel-item h3, .card h3 { font-size: 22px; }
+  .btn, .card .btn { padding: 10px 20px; font-size: 15px; }
+  .carousel-item img { width: 80%; }
+}
