@@ -133,6 +133,29 @@
       overflow: hidden;
     }
 
+.dynamic-background {
+  background: linear-gradient(270deg, #8a4fff, #0b0f2b, #8a4fff);
+  background-size: 600% 600%;
+  animation: gradientFlow 15s ease infinite;
+  color: var(--white); /* Assure que le texte reste lisible */
+  border-radius: 25px; /* Par exemple pour contact, tu peux adapter */
+  padding: 3rem 2rem;
+}
+
+/* Si besoin, enlève le background du header spécifique */
+header {
+  /* Retirer background pour ne pas dupliquer */
+  background: none;
+}
+
+/* Garde la même animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
     #particles {
       position: absolute;
       top: 0; left: 0;
@@ -619,7 +642,7 @@ textarea.invalid + .error-msg {
     </div>
   </section>
 
-  <section class="portfolio" id="portfolio">
+<section class="portfolio dynamic-background" id="portfolio">
     <h2>Mes projets</h2>
 <div class="grid-portfolio">
   <a href="https://bys74.github.io/Acreation/" target="_blank" class="card">
@@ -640,7 +663,7 @@ textarea.invalid + .error-msg {
 </div>
   </section>
 
-<section class="contact" id="contact" style="padding:6rem 0; color:#ddd; background:#12183b00; max-width: 600px; margin: auto; border-radius: 25px;"> 
+<section class="contact dynamic-background" id="contact" style="max-width: 600px; margin: auto;">
 
   <h2 style="color: var(--violet); margin-bottom: 2rem;">Contactez-moi</h2>
   <form id="contactForm" novalidate>
