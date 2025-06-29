@@ -434,8 +434,9 @@ header {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  /* plus besoin de flex ici */
+  z-index: 10000; /* <-- Ajoute ça */
 }
+
 
 .social-floating a {
   position: absolute;
@@ -486,7 +487,94 @@ html {
 }
 
 
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
+.form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--violet);
+}
+
+input, textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #444;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: #1c2250;
+  color: #eee;
+  transition: border-color 0.3s ease;
+  outline-offset: 3px;
+  outline-color: transparent;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--violet);
+  outline-color: var(--violet-light);
+  box-shadow: 0 0 10px var(--violet-light);
+}
+
+input.valid, textarea.valid {
+  border-color: #3adb76; /* vert */
+}
+
+input.invalid, textarea.invalid {
+  border-color: #ff3860; /* rouge */
+}
+
+.error-msg {
+  font-size: 0.85rem;
+  color: #ff3860;
+  height: 18px;
+  margin-top: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input.invalid + .error-msg,
+textarea.invalid + .error-msg {
+  opacity: 1;
+}
+
+#submitBtn {
+  max-width: 180px;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  user-select: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#submitBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+  transform: none;
+}
+
+#submitBtn:not(:disabled):hover {
+  background: var(--violet-light);
+  box-shadow: 0 0 25px var(--violet-light);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#formStatus {
+  color: var(--violet-light);
+}
 
   </style>
 </head>
@@ -552,10 +640,32 @@ html {
 </div>
   </section>
 
-  <section class="contact" id="contact" style="padding:6rem 0; text-align:center; color:#ddd; background:#12183b;">
-    <h2>Contactez-moi</h2>
-    <p>Vous pouvez me joindre par email à <a href="mailto:contact@byscreation.com" style="color:var(--violet);">contact@byscreation.com</a></p>
-  </section>
+<section class="contact" id="contact" style="padding:6rem 0; color:#ddd; background:#12183b00; max-width: 600px; margin: auto; border-radius: 25px;"> 
+
+  <h2 style="color: var(--violet); margin-bottom: 2rem;">Contactez-moi</h2>
+  <form id="contactForm" novalidate>
+    <div class="form-group">
+      <label for="name">Nom complet</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom complet" required />
+      <small class="error-msg"></small>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="exemple@mail.com" required />
+      <small class="error-msg"></small>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+      <small class="error-msg"></small>
+    </div>
+    <button type="submit" class="btn-primary" id="submitBtn" disabled>
+      Envoyer <i class="fas fa-paper-plane"></i>
+    </button>
+    <p id="formStatus" style="margin-top: 1rem; font-weight: 600;"></p>
+  </form>
+</section>
+
 
 <!-- Réseaux sociaux flottants -->
 <div class="social-floating">
@@ -694,13 +804,82 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formStatus = document.getElementById('formStatus');
+
+const fields = {
+  name: {
+    element: form.name,
+    validate: val => val.trim().length >= 2,
+    errorMsg: "Veuillez entrer au moins 2 caractères."
+  },
+  email: {
+    element: form.email,
+    validate: val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+    errorMsg: "Veuillez entrer un email valide."
+  },
+  message: {
+    element: form.message,
+    validate: val => val.trim().length >= 10,
+    errorMsg: "Votre message doit contenir au moins 10 caractères."
+  }
+};
+
+function validateField(field) {
+  const { element, validate, errorMsg } = field;
+  const value = element.value;
+  const isValid = validate(value);
+
+  const errorElem = element.nextElementSibling;
+  if (isValid) {
+    element.classList.remove('invalid');
+    element.classList.add('valid');
+    errorElem.textContent = '';
+  } else {
+    element.classList.add('invalid');
+    element.classList.remove('valid');
+    errorElem.textContent = errorMsg;
+  }
+  return isValid;
+}
+
+function validateForm() {
+  return Object.values(fields).every(validateField);
+}
+
+Object.values(fields).forEach(field => {
+  field.element.addEventListener('input', () => {
+    validateField(field);
+    submitBtn.disabled = !validateForm();
+    formStatus.textContent = '';
+  });
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!validateForm()) return;
+
+  submitBtn.disabled = true;
+  formStatus.style.color = varGet('--violet-light');
+  formStatus.textContent = 'Envoi en cours...';
+
+  // Simulation d’envoi (à remplacer par ton API ou serveur)
+  setTimeout(() => {
+    formStatus.style.color = '#3adb76'; // vert succès
+    formStatus.textContent = 'Merci pour votre message, je vous réponds rapidement !';
+    form.reset();
+    Object.values(fields).forEach(f => f.element.classList.remove('valid'));
+    submitBtn.disabled = true;
+  }, 1800);
+});
+
+function varGet(variable) {
+  return getComputedStyle(document.documentElement).getPropertyValue(variable);
+}
+
 
 </script>
-
-
-
-
-  </script>
 
 </body>
 </html>
