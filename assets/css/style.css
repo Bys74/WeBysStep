@@ -515,7 +515,7 @@ header{
 
 #testimonial,
 #contact {
-    background: url(../images/bg2.jpg) no-repeat center center fixed;
+    background: url(../images/bg4.jpg) no-repeat center center fixed;
     background-size: cover;
     color: #fff;
 }
@@ -720,7 +720,7 @@ footer {
 @media all and (max-width: 991px) {
 
 	header{
-		background: url(../images/bg-small.jpg) no-repeat;
+		background: url(../images/bg4.jpg) no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
 		background-position: 50% -50px;
