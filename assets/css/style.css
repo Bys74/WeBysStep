@@ -1,295 +1,847 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
+/*
+Theme Name: Dark Joe
+Theme URI: http://themewagon.com/demo/DarkJoe/
+Author: ThemeWagon
+Author URI: http://themewagon.com/
+Description: Slick One page portfolio site for Freelancers powered by Bootstrap 3.
+Version: 1.14.11
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
+Tags: dark, white, one page, parallax, responsive-layout, full-width-template
+Text Domain: darkjoe
+*/
 
-<html class="no-js"> <!--<![endif]-->
-    <head>
-        <title>Bys Web</title>
+/**
+* Table of Contents:
+*
+* 01.0 - Universal
+* 02.0 - Header
+* 03.0 - Navigation
+* 04.0 - Services
+* 05.0 - Portfolio
+* 06.0 - Testimonial
+* 07.0 - Contact
+* 08.0 - Footer
+* 09.0 - Responsive Fixes
+* -----------------------------------------------------------------------------
+*/
 
-        <!-- meta -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <!-- stylesheets -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font_icon/css/pe-icon-7-stroke.css">
-        <link rel="stylesheet" href="assets/font_icon/css/helper.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.css">
-        <link rel="stylesheet" href="assets/css/owl.theme.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/style.css">
 
-        <!-- google fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
+/* ///////////////////////////////////////////////////////////////////// 
+//  01 - Universal
+/////////////////////////////////////////////////////////////////////*/
 
-        <script src="assets/js/modernizr.js"></script>
+html, body {
+    height:100%;
 
-    </head>
-    <body id="body">
-        <!--[if lt IE 7]>
-                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+}
 
-        <!-- Header area -->
-        <header id="header">
-            <div class="center text-center">
-                <h1 class="bigheadline">
-                <span>B</span><span>y</span><span>S</span><span>W</span><span>e</span><span>B</span></h1>
-                <h4 class="subheadline">Créateur de site vitrine</h4>
-            </div>
-            <div class="bottom">
-                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent"><i class="pe-7s-angle-down-circle pe-va"></i></a>
-            </div>
-        </header>
-
-        <!-- Navigation area -->
-        <section id="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <div class="logo"><a data-scroll href="#body" class="logo-text">Bys Web</a></div>
-                    </div>
-                    <div class="col-xs-6">
-                        <div class="nav">
-                            <a href="#" data-placement="bottom" title="Menu" class="menu" data-toggle="dropdown"><i class="pe-7s-menu"></i></a>
-                             <div class="dropdown-menu">
-                                 <div class="arrow-up"></div>
-                                 <ul>
-                                     <li><a data-scroll href="#body">Home <i class="pe-7s-home"></i></a><span class="menu-effect"></span></li>
-                                     <li><a data-scroll href="#services">Services <i class="pe-7s-config"></i></a><span class="menu-effect"></span></li>
-                                     <li><a data-scroll href="#portfolio">Mes projets <i class="pe-7s-glasses"></i></a><span class="menu-effect"></span></li>
-                                     <li><a data-scroll href="#testimonial">Témoignages <i class="pe-7s-comment"></i><span class="menu-effect"></span></a></li>
-                                     <li><a data-scroll href="#contact">Contact <i class="pe-7s-help1"></i></a><span class="menu-effect"></span></li>
-                                 </ul>
-                             </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>            
-        </section>
-        
-        <!-- Content Area -->
-
-        <!-- services section -->
-
-<section id="services" class="service-area">
-  <div class="container">
-    <h2 class="block_title">Services</h2>
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <div class="services">
-          <div class="service-wrap">
-            <div class="orbit-wrapper">
-              <span class="orbit"></span>
-              <span class="trail"></span>
-            </div>
-            <i class="pe-7s-science pe-dj pe-va"></i>
-            <h3>Création de site vitrine</h3>
-            <p>Un site vitrine est conçu pour présenter une entreprise, une activité, un service.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="services">
-          <div class="service-wrap">
-            <div class="orbit-wrapper">
-              <span class="orbit"></span>
-              <span class="trail"></span>
-            </div>
-            <i class="pe-7s-monitor pe-dj pe-va"></i>
-            <h3>Responsive Design</h3>
-            <p>Le responsive design est une conception qui permet à un site de s’adapter à tous types d’écrans.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="services">
-          <div class="service-wrap">
-            <div class="orbit-wrapper">
-              <span class="orbit"></span>
-              <span class="trail"></span>
-            </div>
-            <i class="pe-7s-edit pe-dj pe-va"></i>
-            <h3>Clean &amp; Nice</h3>
-            <p>Des réalisations au design sobre et moderne, axées sur l’utilisabilité et la qualité visuelle..</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="services">
-          <div class="service-wrap">
-            <div class="orbit-wrapper">
-              <span class="orbit"></span>
-              <span class="trail"></span>
-            </div>
-            <i class="pe-7s-config pe-dj pe-va"></i>
-            <h3>Support</h3>
-            <p>Réactivité assurée pour l’ajustement de vos contenus.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section><!-- services -->
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: #3635352f;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Dosis', sans-serif;
+}
+a {
+	color: #e66f69;
+	transition: 0.4s ease all;
+	outline: none;
+}
+a:hover,a:active,a:focus{
+	text-decoration: none;
+	color: #e66f69;
+	opacity: 0.9;
+	outline: none;
+}
+.btn {
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    font-size: 1.2em;
+    transition: 0.4s ease all;
+}
+.btn:hover {
+    background: #fff;
+    color: #000;
+}
+.block_title {
+    font-size: 4em;
+    font-weight: 300;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 70px;
+}
+.block_title:before,.block_title:after {
+    content: "";
+    background: #f30b0b79;
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    width: 42%;
+    vertical-align: middle;
+}
+.block_title:before {
+    right: 0.5em;
+    margin-left: -42%;
+}
+.block_title:after {
+    left: 0.5em;
+    margin-right: -42%;
+}
 
 
 
-        <!-- Portfolio Area -->
+/* ///////////////////////////////////////////////////////////////////// 
+//  02 - Header 
+/////////////////////////////////////////////////////////////////////*/
 
-        <section id="portfolio" class="portfolio-area">
-            <div class="container">
-                <h2 class="block_title">Mes projets</h2>
-                <div class="row port cs-style-3">
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/salon.webp" alt="img04">
-                            <figcaption>
-                                <h3>Salon coiffure</h3>
-                                <span>Bys Web</span>
-                                <a href="https://bys74.github.io/Acreation/" class="button" >Visiter</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 item-space">
-                        <figure>
-                            <img src="assets/images/Damass.png" alt="img01">
-                            <figcaption>
-                                <h3>Salon Reiki</h3>
-                                <span>Bys Web</span>
-                                <a href="https://bys74.github.io/Damass/" class="button" >Visiter</a>
-                            </figcaption>
-                        </figure>
- 
-            </div><!-- container -->
-        </section><!-- portfolio -->
-
-        <!-- Testimonial Area -->
-
-        <section id="testimonial" class="testimonial-area">
-            <div class="container">
-                <h2 class="block_title">Témoignages</h2>
-                <div class="row">
-                    <div class="col-xs-12">
-                    </div>
-                    <div id="testimonial-container" class="col-xs-12">
-                        <div class="testimonila-block">
-                            <img src="assets/images/salon.webp" alt="clients" class="selfshot">
-                            <p>J’ai fait appel à Bys Web pour créer le site de mon salon de coiffure, et j’ai été ravie du résultat. Benoît a été très à l’écoute, disponible et réactif tout au long du projet..</p>
-                            <strong>Alexanne </strong>
-                            <br>
-                            <small>A.Création coiffure</small>
-                        </div>
-                        <div class="testimonila-block">
-                            <img src="assets/images/Damass.png" alt="clients" class="selfshot">
-                            <p>J’ai bossé avec Benoît de Bys Web pour le site de mon projet. Ce que j’ai vraiment apprécié, c’est sa rapidité, sa maîtrise technique et sa capacité à gérer tout tout seul, de la conception au déploiement. Du coup, pas de prise de tête, juste un résultat pro et efficace.</p>
-                            <strong>Danielle Aurenche</strong>
-                            <br>
-                            <small>Damass</small>
-                        </div>
-                        <!--<<div class="testimonila-block">
-                            <img src="assets/images/testimonial3.jpg" alt="clients" class="selfshot">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed mollitia illum! Molestiae dignissimos, hic dolorem et eius ut nobis. Corrupti totam amet aperiam aut voluptate nobis dolor at soluta.</p>
-                            <strong>Hossain Abrar</strong>
-                            <br>
-                            <small>Developer</small>
-                        </div>-->
-                    </div>
-                </div>
-            </div><!-- container -->
-        </section><!-- testimonial -->
-
-        <!-- Contact Area -->
-
-        <section id="contact" class="mapWrap">
-            <div id="contact-area">
-                <div class="container">
-                    <h2 class="block_title">Hey !!!</h2>
-                    <div class="row">
-                        <div class="col-xs-12">
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="moreDetails">
-                                <h2 class="con-title">En savoir plus sur moi</h2>
-                                <p> Je m’appelle Benoît.
-                                    L’univers de l’informatique et la création de sites web m’ont toujours passionné.
-                                    J’aime relever les défis techniques tout en donnant vie à des projets créatifs et fonctionnels.
-                                    Chaque nouveau site est pour moi une occasion d’allier innovation, design et expérience utilisateur. </p>
-                                <ul class="address">
-                                    <li><i class="pe-7s-map-marker"></i><span>191 Impasse de pertus 74130 Ayse<br>France</span></li>
-                                    <li><i class="pe-7s-mail"></i><span>BysWeb@gmail.com</span></li>
-                                    <li><i class="pe-7s-phone"></i><span>06.63.66.16.43</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <h2 class="con-title">Contactez-moi</h2>
-                            <form role="form">
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="user_name" placeholder="Nom Prénoms">
-                              </div>
-                              <div class="form-group">
-                                <input type="email" class="form-control" id="your_email" placeholder="Votre email">
-                              </div>
-                              <div class="form-group">
-                                <textarea name="InputMessage" id="user_message" class="form-control" rows="5" required></textarea>
-                              </div>
-
-                              <button type="submit" class="btn medium">Let us know</button>
-                            </form>   
-                        </div>
-                    </div>
-                </div><!-- container -->
-            </div><!-- contact-area -->
-            <div id="social">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-<ul class="scoialinks">
-    <li class="normal-txt">Suivez-moi</li>
-    <li class="social-icons"><a class="facebook" href="#"></a></li>
-    <li class="social-icons"><a class="instagram" href="#"></a></li>  <!-- remplace twitter -->
-    <li class="social-icons"><a class="discord" href="#"></a></li>    <!-- remplace linkedin -->
-</ul>
+header{
+	background: url(../images/bg2.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 50% -50px;
+}
+.center {
+    text-align: center;
+    color: #fff;
+}
 
 
-                        </div>
-                    </div>
-                </div>
-            </div><!-- social -->
-        </section><!-- contact -->
 
-        <!-- Footer Area -->
+.bigheadline span {
+  opacity: 0;
+  position: relative;
+  animation: revealSpark 1s forwards;
+}
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <p class="copyright">© Copyright 2025 <a href="#" target="_blank"></a></p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="designed">Theme by <a href="" target="_blank">Bys Web</a></p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+/* Animation décalée pour chaque lettre */
+.bigheadline span:nth-child(1) { animation-delay: 0s; }
+.bigheadline span:nth-child(2) { animation-delay: 0.15s; }
+.bigheadline span:nth-child(3) { animation-delay: 0.3s; }
+.bigheadline span:nth-child(4) { animation-delay: 0.45s; }
+.bigheadline span:nth-child(5) { animation-delay: 0.6s; }
+.bigheadline span:nth-child(6) { animation-delay: 0.75s; }
+.bigheadline span:nth-child(7) { animation-delay: 0.9s; }
+.bigheadline span:nth-child(8) { animation-delay: 1.05s; }
+.bigheadline span:nth-child(9) { animation-delay: 1.2s; }
 
-        <!-- Necessery scripts -->
-        <script src="assets/js/jquery-2.1.3.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script src="assets/js/jquery.actual.min.js"></script>
-        <script src="assets/js/smooth-scroll.js"></script>
-        <script src="assets/js/owl.carousel.js"></script>
-        <script src="assets/js/script.js"></script>
+/* Animation d’apparition + étincelle */
+@keyframes revealSpark {
+  0% {
+    opacity: 0;
+    filter: brightness(0.5);
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(2);
+    text-shadow: 0 0 10px #fff, 0 0 20px #da3737, 0 0 30px #ffca3a;
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+    text-shadow: none;
+  }
+}
 
-    </body>
-</html>
+.subheadline {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 200;
+	font-size: 3em;
+	margin: 0;
+}
 
+.scrollDown {
+    font-size: 4em;
+    color: rgba(247, 22, 22, 0.705);
+    position: absolute;
+    bottom: 10%;
+    left: 49%;
+    transform: translateX(-50%); /* Centrer horizontalement précisément */
+    animation: bounce 2s infinite ease-in-out;
+}
+
+/* Animation bounce */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+}
+
+.scrollDown:hover{
+	color: rgba(249, 253, 4, 0.74);
+	transition: 0.4s ease all;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  03 - Navigation 
+/////////////////////////////////////////////////////////////////////*/
+
+#navigation{
+	background: #111;
+}
+.nav-wrap {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+.logo {
+	height: 76px;
+	display: table;
+	text-align: left;
+}
+
+.logo-text {
+    font-size: 3em;
+    padding: 0.2em 0;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    display: table-cell;
+	vertical-align: middle;
+}
+
+.menu {
+    float: right;
+    font-size: 3em;
+    color: #fff;
+    padding-top: 10px;
+}
+.dropdown-menu {
+    min-width: 240px;
+    right: 0;
+    left: auto;
+    border: 1px solid #000;
+    box-shadow: none;
+    border-radius: 0px;
+    margin-top: 5px;
+}
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 1em 2em;
+    margin-top: 5%;
+}
+.dropdown-menu ul li {
+    padding: 0.3em 0em 0.6em 0em;
+    font-size: 1.3em;
+    position: relative;
+}
+.dropdown-menu ul li a i {
+    position: absolute;
+    right: 0;
+    top: 20%;
+    font-size: 25px;
+}
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	
+	border-bottom: 8px solid white;
+	float: right;
+	margin-top: -5%;
+	margin-right: 23px;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  04 - Services
+/////////////////////////////////////////////////////////////////////*/
+
+
+
+.services {
+    max-width: 293px;
+    height: 263px;
+}
+.exp {
+    padding-top: 76px;
+}
+.service-area {
+    margin: 76px 0px 50px 0px;
+}
+
+.service-wrap {
+    position: relative;
+    max-width: 293px;
+    height: 263px;
+    border: 1px solid #B5B5B5;
+    text-align: center;
+    border-radius: 50%;
+    overflow: visible;
+}
+
+.orbit-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 255px;
+    height: 0px;
+    margin-left: 0;
+    margin-top: 0;
+    animation: orbit 3s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+    /* Centre le point rouge sur le wrapper */
+    transform-origin: center center;
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 2, 2);
+    border-radius: 50%;
+    box-shadow:
+        0 0 8px 2px rgba(255, 0, 0, 0.8),
+        0 0 20px 6px rgba(255, 0, 0, 0.5),
+        0 0 30px 10px rgba(255, 0, 0, 0.3);
+    filter: blur(0.8px);
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.service-wrap i {
+    margin-top: 40px;
+    transition: all 0.3s ease;
+}
+
+.service-wrap:hover i {
+    color: #e66f69;
+}
+
+.service-wrap p {
+    padding: 0 40px;
+    font-size: 13px;
+}
+
+.service-wrap h3 {
+    margin: 10px 0;
+}
+
+.pe-dj {
+    font-size: 5em;
+}
+
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  05 - Portfolio
+/////////////////////////////////////////////////////////////////////*/
+
+
+#portfolio {
+    padding: 80px 0px 0px 0px;
+}
+
+.port {
+	list-style: none;
+	text-align: left;
+	padding-bottom: 40px;
+}
+
+.port .item {
+	display: inline-block;
+	text-align: left;
+	position: relative;
+}
+
+.port figure {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+
+    /* nouveau */
+    box-shadow: inset 0 0 60px rgba(230, 111, 105, 0.3);
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease;
+}
+
+.port figure:hover {
+    box-shadow: inset 0 0 90px rgba(230, 111, 105, 0.7), 0 0 92px rgba(230, 111, 105, 0.6);
+}
+
+
+.port figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* remplissage sans déformer */
+    display: block;
+}
+
+.port.cs-style-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centre les items horizontalement */
+    gap: 30px; /* espace entre les items (facultatif si déjà défini avec .item-space) */
+}
+
+
+.port figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #111;
+	color: #e66f69;
+}
+
+.port figcaption h3 {
+	margin: 0px 0px 8px 0px;
+	padding: 0;
+	color: #fff;
+}
+
+.port figcaption span:before {
+	content: 'by ';
+}
+
+.port figcaption a {
+	text-align: center;
+	padding: 8px 15px;
+	display: inline-block;
+	color: #fff;
+}
+
+.cs-style-3 figure {
+	overflow: hidden;
+}
+
+.cs-style-3 figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure.cs-hover img {
+	-webkit-transform: translateY(-50px);
+	-moz-transform: translateY(-50px);
+	-ms-transform: translateY(-50px);
+	transform: translateY(-50px);
+}
+
+.cs-style-3 figcaption {
+	height: 100px;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-3 figcaption a {
+	position: absolute;
+	bottom: 31px;
+	right: 20px;
+}
+.button{
+	background: transparent;
+	border: 1px solid #fff;
+}
+.button:hover {
+    background: white;
+    color: #000;
+}
+.btn-center {
+    display: block;
+    padding: 80px 0px 60px 0px;
+    text-align: center;
+}
+.big.button {
+    border: 1px solid #000;
+    font-size: 2em;
+    color: #000;
+    padding: 15px 30px;
+}
+.big.button:hover {
+    background: #000;
+    color: #fff;
+}
+.item-space {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .cs-style-3 figcaption {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  06 - Testimonial 
+/////////////////////////////////////////////////////////////////////*/
+
+#testimonial {
+   /* background: url(../images/bg2.jpg); */
+    padding: 80px 0px 80px 0px;
+    color: #fff;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.testimonila-block {
+    text-align: center;
+}
+.testimonila-block img {
+    border-radius: 50%;
+    border: 1px solid #000;
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 30px;
+}
+.testimonila-block p {
+    max-width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 25px;
+}
+.testimonila-block strong {
+    font-size: 2em;
+}
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  07 - Contact
+/////////////////////////////////////////////////////////////////////*/
+
+
+#contact {
+    color: #fff;
+	   /* background: url(../images/bg4.jpg);*/
+}
+
+#testimonial,
+#contact {
+    background: url(../images/bg2.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.mapWrap {
+    position: relative;
+    min-height: 600px;
+}
+#googleMap {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+#contact-area {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    position: relative;
+    padding: 80px 0px 60px 0px;
+}
+
+.moreDetails {
+    color: #fff;
+}
+.con-title {
+    font-weight: 300;
+    font-size: 3em;
+    margin: 0;
+    padding-bottom: 30px;
+}
+.moreDetails p {
+    font-size: 16px;
+}
+.address {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0px 0px 0px;
+}
+.address li {
+    font-size: 1.1em;
+    position: relative;
+    margin-bottom: 3%;
+}
+.address li i {
+    font-size: 20px;
+    position: absolute;
+    top: 1px;
+}
+.address li span {
+    padding-bottom: 10px;
+    position: relative;
+    left: 30px;
+}
+.form-control {
+    box-shadow: none;
+    border: 1px solid #8E8E8E;
+    border-radius: 0px;
+    padding: 12px 12px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.11);
+}
+.form-group input,.form-group textarea {
+    color: #FFF;
+}
+
+/*Social media links*/
+
+#social {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    padding: 30px 0px 30px 0px;
+    position: relative;
+}
+.normal-txt {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 100;
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.scoialinks {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+.social-icons {
+    display: inline-block;
+    padding: 0px 5px;
+}
+.social-icons a {
+    display: inline-block;
+    width: 50px;    /* largeur de l’icône */
+    height: 50px;   /* hauteur de l’icône */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.social-icons a:hover {
+    background-position: 0px -05px;
+}
+.facebook{
+	background-image: url(../images/facebook.png);
+}
+.twitter{
+	background-image: url(../images/twitter.png);
+}
+.instagram {
+    background-image: url(../images/instagram.png);
+}
+
+.discord {
+    background-image: url(../images/discord.png);
+}
+
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  08 - Footer 
+/////////////////////////////////////////////////////////////////////*/
+
+
+
+footer {
+    width: 100%;
+    background: #000;
+    color: #fff;
+}
+.copyright {
+    margin: 0;
+    padding: 20px 0px;
+    text-align: left;
+}
+.designed {
+    margin: 0;
+    padding: 20px 0px;
+    text-align: right;
+}
+.designed a:hover {
+    color: #e66f69;
+}
+
+
+
+/* ///////////////////////////////////////////////////////////////////// 
+//  09 - Responsive Fixes
+/////////////////////////////////////////////////////////////////////*/
+
+
+
+@media all and (min-width: 1400px) {
+	.centered p {
+		font-size: 3em;
+	}
+	.bigheadline {
+		font-size: 15em;
+	}
+	.subheadline {
+		font-size: 5em;
+	}
+}
+
+@media all and (max-width: 1200px) and (min-width: 992px) {
+
+	.services {
+		max-width: 293px;
+		height: 213px;
+	}
+	.service-wrap i {
+	    font-size: 4em;
+	    margin-top: 28px;
+	}
+	.service-wrap h3 {
+	    font-size: 1.4em;
+	}
+	.service-wrap p {
+	    font-size: 11px;
+	    padding: 0px 35px;
+	}
+}
+
+@media all and (max-width: 991px) and (min-width: 768px) {
+
+	.services {
+		max-width: 293px;
+		height: 293px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.service-wrap p {
+		padding: 0px 40px;
+		font-size: 14px;
+	}
+	.pe-dj {
+		font-size: 6em;
+	}
+
+}
+
+@media all and (max-width: 991px) {
+
+	header{
+		background: url(../images/bg2.jpg) no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: 50% -50px;
+	}
+}
+
+@media all and (max-width: 768px) {
+	.services {
+		max-width: 293px;
+		height: 293px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.pe-dj {
+		font-size: 6em;
+	}
+	.service-wrap i {
+		margin-top: 50px;
+	}
+	.centered p {
+		font-size: 2em;
+	}
+	.bigheadline {
+		font-size: 6em;
+	}
+	.subheadline {
+		font-size: 2em;
+	}
+	.item-space figure {
+	    max-width: 360px;
+	    margin: 0 auto;
+	}
+	.moreDetails {
+		margin-bottom: 60px;
+	}
+	.copyright, .designed {
+		text-align: center;
+	}
+	.scrollDown {
+	    top: 70%;
+	    left: 46%;
+	}
+}
+@media all and (max-width: 380px) {
+
+
+	.logo-text {
+	    font-size: 2em;
+	}
+	.centered p {
+	    font-size: 1em;
+	}
+	.bigheadline {
+	    font-size: 4em;
+	}
+	.subheadline {
+	    font-family: 'Titillium Web',sans-serif;
+	    font-size: 1.5em;
+	    font-weight: 200;
+	    margin: 0;
+	}
+	.testimonila-block p {
+	    max-width: 90%;
+	}
+	.social-icons a {
+	    width: 30px;
+	    height: 30px;
+	}
+	
+}
+
+@media all and (max-width: 480px) {
+
+	.scrollDown {
+	    top: 70%;
+	    left: 44%;
+	}
+}
