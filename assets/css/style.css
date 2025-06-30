@@ -33,10 +33,12 @@ Text Domain: darkjoe
 
 html, body {
     height:100%;
+
 }
 
 body {
 	font-family: 'Lato', sans-serif;
+	background-color: #36353521;
 }
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Dosis', sans-serif;
@@ -73,7 +75,7 @@ a:hover,a:active,a:focus{
 }
 .block_title:before,.block_title:after {
     content: "";
-    background: #ccc;
+    background: #f30b0b79;
     display: inline-block;
     height: 1px;
     position: relative;
@@ -90,12 +92,13 @@ a:hover,a:active,a:focus{
 }
 
 
+
 /* ///////////////////////////////////////////////////////////////////// 
 //  02 - Header 
 /////////////////////////////////////////////////////////////////////*/
 
 header{
-	background: url(../images/bg-small.jpg) no-repeat;
+	background: url(../images/bg2.jpg) no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
 	background-position: 50% -50px;
@@ -215,38 +218,86 @@ header{
     max-width: 293px;
     height: 263px;
 }
-.exp{
-	padding-top: 76px;
+.exp {
+    padding-top: 76px;
 }
 .service-area {
-    margin: 80px 0px 40px 0px;
+    margin: 76px 0px 50px 0px;
 }
 
 .service-wrap {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    max-width: 293px;
+    height: 263px;
     border: 1px solid #B5B5B5;
     text-align: center;
-    display: block;
     border-radius: 50%;
+    overflow: visible;
 }
+
+.orbit-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 255px;
+    height: 0px;
+    margin-left: 0;
+    margin-top: 0;
+    animation: orbit 3s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+    /* Centre le point rouge sur le wrapper */
+    transform-origin: center center;
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 2, 2);
+    border-radius: 50%;
+    box-shadow:
+        0 0 8px 2px rgba(255, 0, 0, 0.8),
+        0 0 20px 6px rgba(255, 0, 0, 0.5),
+        0 0 30px 10px rgba(255, 0, 0, 0.3);
+    filter: blur(0.8px);
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .service-wrap i {
     margin-top: 40px;
     transition: all 0.3s ease;
 }
+
 .service-wrap:hover i {
     color: #e66f69;
 }
+
 .service-wrap p {
-    padding: 0px 40px;
+    padding: 0 40px;
     font-size: 13px;
 }
+
 .service-wrap h3 {
-    margin: 10px 0px;
+    margin: 10px 0;
 }
+
 .pe-dj {
     font-size: 5em;
 }
+
 
 
 /* ///////////////////////////////////////////////////////////////////// 
@@ -272,14 +323,24 @@ header{
 
 .port figure {
     width: 100%;
-    height: 250px; /* hauteur fixe, modifiable selon besoin */
+    height: 250px;
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #000; /* couleur de fond pour éviter le flash blanc au chargement */
+    background: #000;
+
+    /* nouveau */
+    box-shadow: inset 0 0 60px rgba(230, 111, 105, 0.3);
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease;
 }
+
+.port figure:hover {
+    box-shadow: inset 0 0 90px rgba(230, 111, 105, 0.7), 0 0 92px rgba(230, 111, 105, 0.6);
+}
+
 
 .port figure img {
     width: 100%;
@@ -407,12 +468,13 @@ header{
 }
 
 
+
 /* ///////////////////////////////////////////////////////////////////// 
 //  06 - Testimonial 
 /////////////////////////////////////////////////////////////////////*/
 
 #testimonial {
-    background: url(../images/parallax.jpg);
+   /* background: url(../images/bg4.jpg); */
     padding: 80px 0px 80px 0px;
     color: #fff;
     background-attachment: fixed;
@@ -434,7 +496,7 @@ header{
     margin: 0 auto;
     margin-bottom: 20px;
     font-style: italic;
-    font-size: 18px;
+    font-size: 25px;
 }
 .testimonila-block strong {
     font-size: 2em;
@@ -448,7 +510,14 @@ header{
 
 #contact {
     color: #fff;
-	    background: url(../images/parallax.jpg);
+	   /* background: url(../images/bg4.jpg);*/
+}
+
+#testimonial,
+#contact {
+    background: url(../images/bg2.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
 }
 
 .mapWrap {
