@@ -768,7 +768,7 @@ footer {
 	header{
 		background: url(../images/bg2.jpg) no-repeat;
 		background-size: cover;
-		background-attachment: fixed;
+		background-attachment: scroll;
 		background-position: 50% -50px;
 	}
 }
@@ -844,4 +844,19 @@ footer {
 	    top: 70%;
 	    left: 44%;
 	}
+}
+
+header {
+  background: url(../images/bg2.jpg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% -50px;
+}
+
+@media (max-width: 768px) {
+  header {
+    background-image: url(../images/bg2.jpg);
+    background-attachment: scroll; /* fixed ne marche pas bien sur mobile */
+    background-position: center center;
+  }
 }
