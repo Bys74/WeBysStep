@@ -399,6 +399,14 @@ header{
     margin-bottom: 30px;
 }
 
+@media (max-width: 768px) {
+    .cs-style-3 figcaption {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+
 /* ///////////////////////////////////////////////////////////////////// 
 //  06 - Testimonial 
 /////////////////////////////////////////////////////////////////////*/
