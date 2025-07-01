@@ -184,7 +184,13 @@ header{
 /////////////////////////////////////////////////////////////////////*/
 
 #navigation{
-	background: #111;
+  background: #111; /* noir complet au départ */
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: white;
+  width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 .nav-wrap {
 	position: fixed;
@@ -856,5 +862,14 @@ header {
     background-image: url(../images/bg2.jpg);
     background-attachment: scroll; /* fixed ne marche pas bien sur mobile */
     background-position: center center;
+  }
+}
+
+@media (max-width: 767px) {
+  #testimonial,
+  #contact {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+    background-size: cover !important;
   }
 }
