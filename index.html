@@ -29,6 +29,21 @@
         <script src="assets/js/modernizr.js"></script>
 
     </head>
+    <script>
+  window.addEventListener('scroll', function () {
+    const nav = document.getElementById('navigation');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(17, 17, 17, 0.4)'; // plus transparent
+      nav.style.backdropFilter = 'blur(10px)';
+      nav.style.webkitBackdropFilter = 'blur(10px)';
+    } else {
+      nav.style.background = '#111'; // noir opaque
+      nav.style.backdropFilter = 'none';
+      nav.style.webkitBackdropFilter = 'none';
+    }
+  });
+</script>
+
     <body id="body">
         <!--[if lt IE 7]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -38,11 +53,11 @@
         <header id="header">
             <div class="center text-center">
                 <h1 class="bigheadline">
-                <span>B</span><span>y</span><span>S</span><span>W</span><span>e</span><span>B</span></h1>
-                <h4 class="subheadline">Créateur de site vitrine</h4>
+                <span>B</span><span>y</span><span>S </span><span>W</span><span>e</span><span>B</span></h1>
+                <h2 class="subheadline">Créateur de site vitrine</h2>
             </div>
             <div class="bottom">
-                <a data-scroll href="#navigation" class="scrollDown animated pulse" id="scrollToContent"><i class="pe-7s-angle-down-circle pe-va"></i></a>
+                <a data-scroll href="#services" class="scrollDown animated pulse" id="scrollToContent"><i class="pe-7s-angle-down-circle pe-va"></i></a>
             </div>
         </header>
 
